@@ -3,44 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EMI Calculator</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-        }
-
-        .container {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        input, button {
-            margin: 10px 0;
-            padding: 10px;
-            width: 100%;
-            max-width: 300px;
-        }
-    </style>
+    <title>EMI Calculator - Calculate Your Loan EMI Easily</title>
+    <meta name="description" content="Use our EMI calculator to easily calculate your loan EMI. Enter the loan amount, interest rate, and tenure to get instant results.">
+    <meta name="keywords" content="EMI calculator, loan calculator, calculate EMI, loan EMI, interest rate, loan tenure">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
+    <header>
         <h1>EMI Calculator</h1>
-        <p>Loan Amount: <input type="number" id="amount" placeholder="Enter amount"></p>
-        <p>Interest Rate (%): <input type="number" id="rate" placeholder="Enter rate"></p>
-        <p>Loan Tenure (Years): <input type="number" id="years" placeholder="Enter years"></p>
-        <button onclick="calculateEMI()">Calculate EMI</button>
-        <p>Monthly EMI: <span id="emi"></span></p>
-        <p>Principal Part: <span id="principalPart"></span></p>
-        <p>Interest Part: <span id="interestPart"></span></p>
-    </div>
+        <nav>
+            <ul>
+                <li><a href="#calculator">Calculator</a></li>
+                <li><a href="#about">About EMI</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="calculator">
+            <h2>Calculate Your Loan EMI</h2>
+            <p>Loan Amount: <input type="number" id="amount" placeholder="Enter amount"></p>
+            <p>Interest Rate (%): <input type="number" id="rate" placeholder="Enter rate"></p>
+            <p>Loan Tenure (Years): <input type="number" id="years" placeholder="Enter years"></p>
+            <button onclick="calculateEMI()">Calculate EMI</button>
+            <p>Monthly EMI: <span id="emi"></span></p>
+            <p>Principal Part: <span id="principalPart"></span></p>
+            <p>Interest Part: <span id="interestPart"></span></p>
+        </section>
+        <section id="about">
+            <h2>About EMI</h2>
+            <p>EMI stands for Equated Monthly Installment. It is the amount you pay every month towards your loan. The EMI consists of both the principal amount and the interest on the loan.</p>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or need further assistance, feel free to contact us at <a href="mailto:info@emicalculator.com">info@emicalculator.com</a>.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 EMI Calculator. All rights reserved.</p>
+    </footer>
     <script>
         function calculateEMI() {
             let amount = parseFloat(document.getElementById('amount').value);
