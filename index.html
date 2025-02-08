@@ -19,7 +19,10 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            input, button {
+            text-align: center;
+        }
+
+        input, button {
             margin: 10px 0;
             padding: 10px;
             width: 100%;
@@ -35,6 +38,8 @@
         <p>Loan Tenure (Years): <input type="number" id="years" placeholder="Enter years"></p>
         <button onclick="calculateEMI()">Calculate EMI</button>
         <p>Monthly EMI: <span id="emi"></span></p>
+        <p>Principal Part: <span id="principalPart"></span></p>
+        <p>Interest Part: <span id="interestPart"></span></p>
     </div>
     <script>
         function calculateEMI() {
@@ -44,6 +49,8 @@
 
             if (isNaN(amount) || isNaN(rate) || isNaN(years)) {
                 document.getElementById('emi').innerText = "Please enter valid inputs.";
+                document.getElementById('principalPart').innerText = "";
+                document.getElementById('interestPart').innerText = "";
                 return;
             }
 
@@ -51,7 +58,14 @@
             let months = years * 12;
             let emi = (amount * monthlyRate * Math.pow(1 + monthlyRate, months)) / (Math.pow(1 + monthlyRate, months) - 1);
 
+            let totalPayment = emi * months;
+            let totalInterest = totalPayment - amount;
+            let principalPart = amount / months;
+            let interestPart = totalInterest / months;
+
             document.getElementById('emi').innerText = emi.toFixed(2);
+            document.getElementById('principalPart').innerText = principalPart.toFixed(2);
+            document.getElementById('interestPart').innerText = interestPart.toFixed(2);
         }
     </script>
 </body>
